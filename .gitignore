@@ -1,0 +1,16 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# remix
+/.cache
+/build
+/public/build
+
+# secrets
+.env
+
+# tailwind
+/app/tailwind.css

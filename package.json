@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "name": "remix-boilerplate",
+  "description": "An opinionated boilerplate for Remix apps",
+  "author": {
+    "name": "Ali R. Unes",
+    "url": "https://arunes.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:css && remix build",
+    "build:css": "tailwindcss -i ./styles/tailwind.css -o ./app/tailwind.css --minify",
+    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "dev:css": "tailwindcss -i ./styles/tailwind.css -o ./app/tailwind.css --watch",
+    "postinstall": "remix setup node",
+    "start": "remix-serve build",
+    "test": "jest",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "pre-push": "jest"
+  },
+  "dependencies": {
+    "@remix-run/react": "^1.1.1",
+    "@remix-run/serve": "^1.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "remix": "^1.1.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.1.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.3",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "concurrently": "^6.5.1",
+    "esbuild-jest": "^0.5.0",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.5",
+    "lint-staged": "^12.1.4",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.8",
+    "tsc-files": "^1.1.3",
+    "typescript": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "sideEffects": false
+}
